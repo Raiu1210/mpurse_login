@@ -16,7 +16,12 @@ export default {
   methods: {
     async post() {
       let response = await Methods.ask_verify_sig()
-      console.log(response)
+      console.log(response["data"]["message"])
+      if(response["data"]["message"]) {
+        alert("login success")
+      } else {
+        alert("login failed")
+      }
     }
   }
 }
